@@ -1,0 +1,180 @@
+﻿<Window x:Class="MaksDiplom.DoctorMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MaksDiplom"
+        mc:Ignorable="d"
+        Title="MedCleen" Height="650" Width="600" WindowStartupLocation="CenterScreen" Icon="/Logo.ico" ResizeMode="NoResize">
+    <Grid>
+        <Grid x:Name="MainGrid" Visibility="Hidden">
+
+            <Border x:Name="HeaderBorder" Width="600" Height="200" Background="#FF493F98" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-10,0,0" >
+                <Border.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+                </Border.Resources>
+                <Label x:Name="HelloText" Content="Здравствуйте,  " HorizontalAlignment="Center" VerticalAlignment="Center" Width="272" Foreground="White" Height="137" FontWeight="Bold" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Condensed"/>
+            </Border>
+            <Label Width="300" Height="50" Content="Действие с аккаунтом" Foreground="Black" FontWeight="Bold" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,208,0,0"></Label>
+            <Button x:Name="WriteReg" Margin="50,270,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Background="#FF504BFD" Content="Выписать пациента" Foreground="White" FontWeight="Bold" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Condensed" Click="WriteReg_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="ReceptReg" Margin="50,330,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Background="#FF504BFD" Content="Выдать рецепт" Foreground="White" FontWeight="Bold" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Condensed" Click="ReceptReg_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="DeleteReg" Margin="50,450,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Background="#FFFD4B58" Content="Удалить" Foreground="White" FontWeight="Bold" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Condensed" Click="DeleteReg_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="EditPasswordReg" Margin="50,390,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="50" Background="#FFFD4B58" Content="Изменить пароль" Foreground="White" FontWeight="Bold" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Condensed" Click="EditReg_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Grid x:Name="WritePacGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220,280,0,0" Width="300" Height="180" Background="#FF625B9A" Visibility="Hidden">
+                <Label FontWeight="Bold" FontSize="18" FontFamily="Bahnschrift Condensed" Foreground="White" Content="Выберите пациента(Полис)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0"></Label>
+                <ComboBox x:Name="WritePacGrid_PacBox" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,30,0,0" Width="200" Height="30"></ComboBox>
+                <Label FontWeight="Bold" FontSize="18" FontFamily="Bahnschrift Condensed" Foreground="White" Content="Примечания" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,60,0,0"></Label>
+                <TextBox x:Name="WritePacGrid_DisText" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,90,0,0" Width="200" Height="30"></TextBox>
+                <Button x:Name="WritePac_1" Margin="10,125,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="50" Background="#FF493F98" Content="Выписать" Foreground="White" FontWeight="Bold" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Condensed" Click="WritePac_1_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+
+            <Grid x:Name="ReceptPacGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220,280,0,0" Width="300" Height="250" Background="#FF625B9A" Visibility="Hidden">
+                <Label FontWeight="Bold" FontSize="18" FontFamily="Bahnschrift Condensed" Foreground="White" Content="Выберите пациента(Полис)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0"></Label>
+                <ComboBox x:Name="ReceptPacGrid_PacBox" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,30,0,0" Width="200" Height="30"></ComboBox>
+                <Label FontWeight="Bold" FontSize="18" FontFamily="Bahnschrift Condensed" Foreground="White" Content="Препарат" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,60,0,0"></Label>
+                <TextBox x:Name="ReceptPacGrid_PreparatText" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,90,0,0" Width="200" Height="30"></TextBox>
+                <Label FontWeight="Bold" FontSize="18" FontFamily="Bahnschrift Condensed" Foreground="White" Content="Примечания" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,120,0,0"></Label>
+                <TextBox x:Name="ReceptPacGrid_DisText" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,150,0,0" Width="200" Height="30"></TextBox>
+                
+                <Button x:Name="ReceptPac_1" Margin="10,190,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="50" Background="#FF493F98" Content="Выписать рецепт" Foreground="White" FontWeight="Bold" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Condensed" Click="ReceptPac_1_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+
+            <Grid x:Name="EditPassGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220,340,0,0" Width="300" Height="180" Background="#FF625B9A" Visibility="Hidden">
+                <Label FontWeight="Bold" FontSize="18" FontFamily="Bahnschrift Condensed" Foreground="White" Content="Старый пароль" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0"></Label>
+                <PasswordBox x:Name="OldPassText" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,30,0,0" Width="200" Height="30"></PasswordBox>
+                <Label FontWeight="Bold" FontSize="18" FontFamily="Bahnschrift Condensed" Foreground="White" Content="Новый пароль" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,60,0,0"></Label>
+                <PasswordBox x:Name="NewPassText" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,90,0,0" Width="200" Height="30"></PasswordBox>
+                <Button x:Name="EditPasswordReg_1" Margin="10,125,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="50" Background="#FF493F98" Content="Изменить пароль" Foreground="White" FontWeight="Bold" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Condensed" Click="EditPasswordReg_1_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+            <Button x:Name="ExitButton" Margin="0,15,20,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="50" Height="50" Background="#FF574BB9" Content="Выйти" Foreground="White" FontWeight="Bold" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Condensed" Click="ExitButton_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+
+        <Grid x:Name="VisitGrid" Visibility="Hidden">
+            <Border x:Name="HeaderBorderVisit" Width="600" Height="100" Background="#FF493F98" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-27,0,0" >
+                <Border.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+                </Border.Resources>
+                <Label Content="Новый прием" HorizontalAlignment="Center" VerticalAlignment="Center" Width="272" Foreground="White" Height="35" FontWeight="Bold" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,0,0" FontFamily="Bahnschrift Condensed">
+                </Label>
+            </Border>
+            <Label Content="ПОЛИС пациента" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Width="426" Height="26" FontFamily="Bahnschrift Condensed" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <ComboBox x:Name="PolicyText" HorizontalAlignment="Center" Margin="0,126,0,0" VerticalAlignment="Top" Width="426" FontFamily="Bahnschrift Condensed" FontSize="16" FontWeight="Bold" />
+           
+            <Label Content="Кабинет" HorizontalAlignment="Center" Margin="0,147,0,0" VerticalAlignment="Top" Width="426" FontFamily="Bahnschrift Condensed" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="CabinetText" HorizontalAlignment="Center" Margin="0,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="426" FontFamily="Bahnschrift Condensed" FontSize="16" FontWeight="Bold" PreviewTextInput="CabinetText_PreviewTextInput" />
+            <Label Content="Дата приема" HorizontalAlignment="Center" Margin="0,195,0,0" VerticalAlignment="Top" Width="426" FontFamily="Bahnschrift Condensed" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="DisText" HorizontalAlignment="Center" Margin="0,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="426" Height="100" FontFamily="Bahnschrift Condensed" FontSize="16" FontWeight="Bold" />
+            <Label Content="Примечания" HorizontalAlignment="Center" VerticalAlignment="Top" Width="426" FontFamily="Bahnschrift Condensed" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,331,0,0"/>
+            <DatePicker x:Name="DateVisitPicker" HorizontalAlignment="Center" VerticalAlignment="Top" Width="426" Margin="0,225,0,0" FontFamily="Bahnschrift Condensed" FontSize="16" FontWeight="Bold" />
+
+            <Label Content="Время" HorizontalAlignment="Center" Margin="0,254,0,0" VerticalAlignment="Top" Width="426" FontFamily="Bahnschrift Condensed" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="Часы" HorizontalAlignment="Left" Margin="90,300,0,0" VerticalAlignment="Top" Width="100" FontFamily="Bahnschrift Condensed" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="29"/>
+            <ComboBox x:Name="HourBox" Margin="180,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="29"></ComboBox>
+            <Label Content="Минуты" HorizontalAlignment="Left" Margin="350,300,0,0" VerticalAlignment="Top" Width="100" FontFamily="Bahnschrift Condensed" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="29"/>
+            <ComboBox x:Name="MinuteBox" Margin="440,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="29"></ComboBox>
+
+            <Button x:Name="AddVisitButtonOnDb" Margin="0,478,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Height="50" Background="#FFFD4B58" Content="Назначить прием" Foreground="White" FontWeight="Bold" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Condensed" Click="AddVisitButtonOnDb_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+
+        </Grid>
+        <Grid x:Name="InfoGrid" Background="White" Visibility="Hidden">
+            <Border x:Name="HeaderBorderInfo" Width="600" Height="100" Background="#FF493F98" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-27,0,0" >
+                <Border.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+                </Border.Resources>
+                <Label Content="Все приемы" HorizontalAlignment="Center" VerticalAlignment="Center" Width="272" Foreground="White" Height="35" FontWeight="Bold" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,0,0" FontFamily="Bahnschrift Condensed">
+                </Label>
+            </Border>
+
+            <ListBox x:Name="VisitList" d:ItemsSource="{d:SampleData ItemCount=5}" Width="500" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" FontFamily="Bahnschrift Condensed" Visibility="Visible" Margin="0,10,0,0"/>
+            <Button x:Name="DeleteListButton" Margin="250,430,0,0" Width="250" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" Content="Удалить" FontFamily="Bahnschrift Condensed" Click="DeleteListButton_Click"></Button>
+            <Button x:Name="EditListButton" Margin="0,430,250,0" Width="250" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" Content="Изменить" FontFamily="Bahnschrift Condensed" Click="EditListButton_Click"></Button>
+        </Grid>
+
+        <Grid x:Name="PanelGrid" Height="50" VerticalAlignment="Bottom" Margin="0,0,0,15" HorizontalAlignment="Center" Width="270">
+
+            <Button x:Name="AddVisitButton" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="70" Height="50" Background="{x:Null}" Content="h" Foreground="Black" FontWeight="Bold" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Webdings" Click="AddVisitButton_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="InfoButton" Margin="100,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="70" Height="50" Background="{x:Null}" Content="i" Foreground="Black" FontWeight="Bold" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Webdings" Click="InfoButton_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="ProfileButton" Margin="200,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="70" Height="50" Background="{x:Null}" Content="m" Foreground="Black" FontWeight="Bold" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Webdings" Click="ProfileButton_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,38 @@
+﻿<Window x:Class="MaksDiplom.AddDoctorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MaksDiplom"
+        mc:Ignorable="d"
+        Title="MedCleen" Height="600" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/Logo.ico" Closing="Window_Closing">
+    <Grid>
+        <Border x:Name="HeaderBorder" Width="400" Height="100" Background="#FF493F98" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-30,0,0" >
+            <Border.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </Border.Resources>
+            <Label x:Name="HelloText" Content="Новый доктор" HorizontalAlignment="Center" VerticalAlignment="Center" Width="272" Foreground="White" Height="35" FontWeight="Bold" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,0,0" FontFamily="Bahnschrift Condensed">
+            </Label>
+        </Border>
+        <Label Width="400" Height="30" FontWeight="Bold" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,100,0,0" FontFamily="Bahnschrift Condensed" Content="Имя" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+        <TextBox x:Name="NameText" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,130,0,0" FontWeight="Bold" FontSize="20" FontFamily="Bahnschrift Condensed"></TextBox>
+        <Label Width="400" Height="30" FontWeight="Bold" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,175,0,0" FontFamily="Bahnschrift Condensed" Content="Фамилия" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+        <TextBox x:Name="SurnameText" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,205,0,0" FontWeight="Bold" FontSize="20" FontFamily="Bahnschrift Condensed"></TextBox>
+        <Label Width="400" Height="30" FontWeight="Bold" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,250,0,0" FontFamily="Bahnschrift Condensed" Content="Отчество" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+        <TextBox x:Name="PatronomicText" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,280,0,0" FontWeight="Bold" FontSize="20" FontFamily="Bahnschrift Condensed"></TextBox>
+        <Label Width="400" Height="30" FontWeight="Bold" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,325,0,0" FontFamily="Bahnschrift Condensed" Content="Логин" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+        <TextBox x:Name="LoginText" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,355,0,0" FontWeight="Bold" FontSize="20" FontFamily="Bahnschrift Condensed"></TextBox>
+        <Label Width="400" Height="30" FontWeight="Bold" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,400,0,0" FontFamily="Bahnschrift Condensed" Content="Должность" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+        <TextBox x:Name="jobTitleText" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,430,0,0" FontWeight="Bold" FontSize="20" FontFamily="Bahnschrift Condensed"></TextBox>
+        <Button x:Name="AddDoctorButton" Margin="0,490,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Height="50" Background="#FFFD4B58" Content="Добавить доктора" Foreground="White" FontWeight="Bold" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift Condensed" Click="AddDoctorButton_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+    </Grid>
+</Window>
